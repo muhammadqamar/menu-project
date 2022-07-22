@@ -3,8 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffff !important;
   font-family: 'League Spartan';
 }
+
+body {
+  background-color: #ffff !important;
+}
+
+/* fonts */
+
 /* font-family: 'Crimson Pro'; */
 /* font-family: 'League Spartan'; */
