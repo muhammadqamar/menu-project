@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box, Text, Link } from '@chakra-ui/react';
-import Main from './main';
+import Becomevip from './becomevip';
+import Toppings from './toppings';
+import Options from './options';
 
 function Index() {
   return (
     <Box>
-      <Text>Menu Project</Text>
+      <Text color="#000">Menu Project</Text>
       <Link
         color="teal.500"
         href="https://chakra-ui.com"
@@ -15,7 +17,9 @@ function Index() {
       >
         Learn Chakra
       </Link>
-      <Main />
+      <Becomevip />
+      <Toppings />
+      <Options />
     </Box>
   );
 }
