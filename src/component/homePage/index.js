@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Text, Link } from '@chakra-ui/react';
+import Main from './main';
 
 function Index() {
   return (
@@ -14,6 +15,7 @@ function Index() {
       >
         Learn Chakra
       </Link>
+      <Main />
     </Box>
   );
 }
