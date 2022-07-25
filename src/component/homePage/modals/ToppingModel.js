@@ -1,12 +1,9 @@
+import React from 'react';
 import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
-  ModalCloseButton,
-  useDisclosure,
   Button,
   Flex,
   Text,
@@ -23,22 +20,11 @@ import {
   Select,
 } from '@chakra-ui/react';
 
-import React from 'react';
-import Heart from '../../assets/images/heart.png';
 import ArrowImage from '../../assets/images/icons8-left-arrow-48.png';
 import AvatarImage from '../../assets/images/avatar.PNG';
 import LikeImage from '../../assets/images/like.png';
 
-const LikeNumber = {
-  color: '#656565',
-  width: '48px',
-  fontSize: '0.8em',
-  textAlign: 'center',
-  mt: '2px',
-};
 const ToppingModel = ({ isOpen, onOpen, onClose }) => {
-  // const { isOpen, onOpen, onClose } = useDisclosure()
-
   return (
     <>
       <Modal onClose={onClose} size="full" isOpen={isOpen}>

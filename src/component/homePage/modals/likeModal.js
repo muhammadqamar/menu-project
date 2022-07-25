@@ -32,7 +32,7 @@ import Logo from '../../assets/images/logo.png';
 import AvatarImage from '../../assets/images/avatar.PNG';
 import LikeImage from '../../assets/images/like.png';
 
-const LikeModal = ({ isOpen, onOpen, onClose, likeOpen }) => {
+const LikeModal = ({ isOpen, onClose, likeOpen }) => {
   const [openLike, setOpenLike] = useState(false);
 
   const LikeNumber = {

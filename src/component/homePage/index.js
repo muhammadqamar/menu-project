@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Text, Link, Flex, useDisclosure } from '@chakra-ui/react';
+import React from 'react';
+import { Box, Text, Flex, useDisclosure } from '@chakra-ui/react';
 import Becomevip from './becomevip';
 import Toppings from './toppings';
 import Options from './options';
@@ -12,8 +12,6 @@ import ToppingModel from './modals/ToppingModel';
 
 function Index() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const [likeOpen, setLikeOpen] = useState(false);
 
   return (
     <>
