@@ -22,7 +22,7 @@ const linkbtn = {
     background: 'transparent',
   },
 };
-const Toppings = () => {
+const Toppings = ({onOpen}) => {
   return (
     <Box w="100%" minH="322px" p="30px">
       <Box maxW="1440px" m="0 auto">
@@ -40,16 +40,16 @@ const Toppings = () => {
         </Heading>
         <Flex justifyContent="space-between" gap="15px">
           <Flex sx={links}>
-            <Button sx={linkbtn}>boba</Button>
-            <Button sx={linkbtn}>aloe vera</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>boba</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>aloe vera</Button>
           </Flex>
           <Flex sx={links}>
-            <Button sx={linkbtn}>coconut jelly</Button>
-            <Button sx={linkbtn}>crystal deerioca</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>coconut jelly</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>crystal deerioca</Button>
           </Flex>
           <Flex sx={links}>
-            <Button sx={linkbtn}>konjac jelly</Button>
-            <Button sx={linkbtn}>brûlée</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>konjac jelly</Button>
+            <Button sx={linkbtn} onClick={()=>{onOpen()}}>brûlée</Button>
           </Flex>
         </Flex>
       </Box>
