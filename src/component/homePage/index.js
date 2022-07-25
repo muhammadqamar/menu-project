@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Link, Flex } from '@chakra-ui/react';
+import { Box, Text, Link, Flex, useDisclosure } from '@chakra-ui/react';
 import Becomevip from './becomevip';
 import Toppings from './toppings';
 import Options from './options';
@@ -8,8 +8,10 @@ import Menus from './menus';
 
 // images
 import heroBgImage from '../assets/images/bg.png';
+import ToppingModel from './ToppingModel';
 
 function Index() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Box
@@ -45,8 +47,11 @@ function Index() {
       <Becomevip />
       <Menus />
 
-      <Toppings />
+      <Toppings onOpen={onOpen} />
       <Options />
+
+      {/* Topping Model Section */}
+      <ToppingModel isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
     </>
   );
 }
