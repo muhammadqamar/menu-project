@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Text, Link, Flex, useDisclosure } from '@chakra-ui/react';
 import Becomevip from './becomevip';
 import Toppings from './toppings';
@@ -8,10 +8,13 @@ import Menus from './menus';
 
 // images
 import heroBgImage from '../assets/images/bg.png';
-import ToppingModel from './ToppingModel';
+import ToppingModel from './modals/ToppingModel';
 
 function Index() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [likeOpen, setLikeOpen] = useState(false);
+
   return (
     <>
       <Box
@@ -45,13 +48,14 @@ function Index() {
         </Flex>
       </Box>
       <Becomevip />
+
       <Menus />
 
       <Toppings onOpen={onOpen} />
       <Options />
 
       {/* Topping Model Section */}
-      <ToppingModel isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+      <ToppingModel isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </>
   );
 }

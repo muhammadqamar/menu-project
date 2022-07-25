@@ -24,10 +24,10 @@ import {
 } from '@chakra-ui/react';
 
 import React from 'react';
-import Heart from '../assets/images/heart.png';
-import ArrowImage from '../assets/images/icons8-left-arrow-48.png';
-import AvatarImage from '../assets/images/avatar.PNG';
-import LikeImage from '../assets/images/like.png';
+import Heart from '../../assets/images/heart.png';
+import ArrowImage from '../../assets/images/icons8-left-arrow-48.png';
+import AvatarImage from '../../assets/images/avatar.PNG';
+import LikeImage from '../../assets/images/like.png';
 
 const LikeNumber = {
   color: '#656565',
@@ -44,8 +44,6 @@ const ToppingModel = ({ isOpen, onOpen, onClose }) => {
       <Modal onClose={onClose} size="full" isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
-          {/* <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton /> */}
           <ModalBody>
             <Flex
               maxW="600px"
@@ -64,42 +62,6 @@ const ToppingModel = ({ isOpen, onOpen, onClose }) => {
                 >
                   Back To
                 </Text>
-              </Flex>
-              <Flex flexDir="column">
-                <Box
-                  minW="48px"
-                  h="48px"
-                  ml="16px"
-                  bg="#EFEFEF"
-                  flexShrink="0"
-                  borderTopLeftRadius="24px"
-                  borderTopRightRadius="24px"
-                  borderBottomRightRadius="24px"
-                  boxShadow="0 0 3px rgb(0 0 0 / 25%)"
-                >
-                  <Flex borderRadius="24px" bg="#fff" overflow="hidden">
-                    <Button
-                      backgroundColor="none"
-                      borderRadius="0"
-                      w="48px"
-                      h="48px"
-                      bg="#fff"
-                    >
-                      <Img src={Heart} alt="heart" />
-                    </Button>
-                  </Flex>
-                </Box>
-                <Flex
-                  w="48px"
-                  h="24px"
-                  bg="#EFEFEF"
-                  flexShrink="0"
-                  ml="16px"
-                  borderBottomLeftRadius="24px"
-                  borderBottomRightRadius="24px"
-                >
-                  <Text sx={LikeNumber}>87</Text>
-                </Flex>
               </Flex>
 
               {/* Form */}
@@ -142,8 +104,12 @@ const ToppingModel = ({ isOpen, onOpen, onClose }) => {
               <Box marginTop={'16px'}>
                 <Tabs>
                   <TabList>
-                    <Tab width={'100%'}    textTransform="uppercase">Reviews (12)</Tab>
-                    <Tab width={'100%'}    textTransform="uppercase">Book A Table</Tab>
+                    <Tab width={'100%'} textTransform="uppercase">
+                      Reviews (12)
+                    </Tab>
+                    <Tab width={'100%'} textTransform="uppercase">
+                      Book A Table
+                    </Tab>
                   </TabList>
                   <TabPanels>
                     <TabPanel>
@@ -205,7 +171,7 @@ const ToppingModel = ({ isOpen, onOpen, onClose }) => {
                                 lineHeight=" 1.5"
                                 marginBottom="8px"
                               >
-                                Text
+                                text
                               </Text>
                               <Img src={LikeImage} width="24px" height="24px" />
                             </Flex>
@@ -251,9 +217,6 @@ const ToppingModel = ({ isOpen, onOpen, onClose }) => {
               </Box>
             </Box>
           </ModalBody>
-          {/* <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
     </>
