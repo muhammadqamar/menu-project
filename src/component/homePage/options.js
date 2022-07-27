@@ -15,9 +15,10 @@ const optioncontent = {
   lineHeight: '22.85px',
 };
 const optionFlex = {
-  minW: '600px',
+  w: { base: '100%', md: '600px' },
   justifyContent: 'space-between',
-  mb: '45px',
+  flexWrap: 'wrap',
+  mb: { base: '0', sm: '45px' },
 };
 
 const itembtn = {
@@ -29,6 +30,7 @@ const itembtn = {
   background: 'transparent',
   textTransform: 'uppercase',
   letterSpacing: '1px',
+  mb: { base: '25px', sm: '0' },
   m: '10 auto',
   _hover: {
     background: 'transparent',
@@ -61,12 +63,16 @@ const Options = () => {
             <Text>Amount of Ice: Regular | Light|&nbsp;Ice-Free</Text>
           </Box>
           <Flex
-            gap="135px"
+            gap={{ base: '40px', sm: '80px', md: '135px' }}
             justifyContent="center"
             m="110px auto"
             flexWrap="wrap"
           >
-            <Flex flexDirection="column" alignItems="center" minW="620px">
+            <Flex
+              flexDirection="column"
+              alignItems={{ base: 'flex-start', sm: 'center' }}
+              w={{ base: '100%', md: '620px' }}
+            >
               <Flex sx={optionFlex}>
                 <Button sx={itembtn}>Show all items</Button>
                 <Button sx={itembtn}>
@@ -97,7 +103,11 @@ const Options = () => {
                 </Button>
               </Box>
             </Flex>
-            <Flex flexDirection="column" alignItems="center">
+            <Flex
+              flexDirection="column"
+              alignItems={{ base: 'flex-start', sm: 'center' }}
+              w={{ base: '100%', md: '620px' }}
+            >
               <Flex sx={optionFlex}>
                 <Button sx={itembtn}>
                   <img

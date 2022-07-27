@@ -53,9 +53,10 @@ const Menus = () => {
   };
 
   const Card = {
-    w: '638px',
+    w: { base: '100%', md: '638px' },
     p: '16px',
     mb: '32px',
+    flexDirection: { base: 'column', md: 'inherit' },
     borderBottom: ' 4px solid #cccccc45',
     borderRadius: '10px',
     bg: ' rgba(0, 0, 0, 0.01)',
@@ -136,15 +137,24 @@ const Menus = () => {
 
   return (
     <>
-      <Box maxW="1440px" m="0 auto" p="0 66px">
+      <Box maxW="1440px" m="0 auto" p={{ base: '0 15px', md: '0 66px' }}>
         <Box mb="107px">
           <Text sx={TopHeading}>Brown Sugar Deerioca</Text>
           <Text sx={LabelText}>(No Tea)</Text>
 
-          <Flex gap="32px" flexWrap="wrap" justifyContent="space-between">
+          <Flex
+            gap="32px"
+            flexWrap={{ base: 'wrap', xl: 'nowrap' }}
+            justifyContent={{ base: 'center', xl: 'space-between' }}
+          >
             {/*card  1  */}
             <Flex sx={Card} position="relative">
-              <Box w="160px" h="128px" bg="white" flexShrink="0">
+              <Box
+                w={{ base: '100%', md: '160px' }}
+                h={{ base: 'auto', md: '128px' }}
+                bg="white"
+                flexShrink="0"
+              >
                 <Image
                   boxSize="100%"
                   objectFit="cover"
@@ -154,7 +164,7 @@ const Menus = () => {
               </Box>
 
               <Flex flexDir="column" justifyContent="space-between" ml="29px">
-                <Flex>
+                <Flex justifyContent={{ base: 'space-between', md: 'inherit' }}>
                   <Box maxW="350px">
                     <Text sx={CardHeading}>Brown Sugar Deerioca Milk</Text>
                     <Text sx={CardDesc}>
@@ -266,7 +276,12 @@ const Menus = () => {
             </Flex>
             {/*card  2 */}
             <Flex sx={Card} position="relative">
-              <Box w="160px" h="128px" bg="white" flexShrink="0">
+              <Box
+                w={{ base: '100%', md: '160px' }}
+                h={{ base: 'auto', md: '128px' }}
+                bg="white"
+                flexShrink="0"
+              >
                 <Image
                   boxSize="100%"
                   objectFit="cover"
@@ -276,7 +291,7 @@ const Menus = () => {
               </Box>
 
               <Flex flexDir="column" justifyContent="space-between" ml="29px">
-                <Flex>
+                <Flex justifyContent={{ base: 'space-between', md: 'inherit' }}>
                   <Box maxW="350px">
                     <Text sx={CardHeading}>Brown Sugar Deerioca Milk</Text>
                     <Text sx={CardDesc}>

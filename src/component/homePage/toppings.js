@@ -2,10 +2,12 @@ import React from 'react';
 import { Box, Button, Flex, Heading } from '@chakra-ui/react';
 
 const links = {
-  w: '446px',
+  w: { base: '100%', md: '446px' },
   color: 'rgba(15, 15, 15, 1)',
   p: '16px',
-  flexDirection: 'column',
+  flexDirection: { base: 'row', md: 'column' },
+  flexwrap: { base: 'wrap', md: 'nowrap' },
+  justifyContent: { base: 'center', md: 'inherit' },
 };
 const linkbtn = {
   background: 'transparent',
@@ -22,7 +24,7 @@ const linkbtn = {
     background: 'transparent',
   },
 };
-const Toppings = ({onOpen}) => {
+const Toppings = ({ onOpen }) => {
   return (
     <Box w="100%" minH="322px" p="30px">
       <Box maxW="1440px" m="0 auto">
@@ -38,18 +40,64 @@ const Toppings = ({onOpen}) => {
         >
           Toppings
         </Heading>
-        <Flex justifyContent="space-between" gap="15px">
+        <Flex
+          justifyContent="space-between"
+          flexDirection={{ base: 'column', md: 'inherit' }}
+          gap="15px"
+        >
           <Flex sx={links}>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>boba</Button>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>aloe vera</Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              boba
+            </Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              aloe vera
+            </Button>
           </Flex>
           <Flex sx={links}>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>coconut jelly</Button>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>crystal deerioca</Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              coconut jelly
+            </Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              crystal deerioca
+            </Button>
           </Flex>
           <Flex sx={links}>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>konjac jelly</Button>
-            <Button sx={linkbtn} onClick={()=>{onOpen()}}>brûlée</Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              konjac jelly
+            </Button>
+            <Button
+              sx={linkbtn}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              brûlée
+            </Button>
           </Flex>
         </Flex>
       </Box>
