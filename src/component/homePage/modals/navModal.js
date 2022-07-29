@@ -34,10 +34,6 @@ const NavModal = ({ isOpen, onOpen, onClose }) => {
   return (
     <>
       <Drawer
-        //
-        // isFullHeight={true}
-        // preserveScrollBarGap={false}
-        // p="35% 0 30 0"
         zIndex="99"
         onClose={onClose}
         isOpen={isOpen}
@@ -46,25 +42,15 @@ const NavModal = ({ isOpen, onOpen, onClose }) => {
         placement="top"
       >
         <DrawerOverlay />
-        <DrawerContent
-          w="100%"
-          h="100%"
-          overflow="auto"
-          // opacity="0.95"
-          // blockScrollOnMount={true}
-          // transition="0.5s ease-in-out"
-          transform="translateY(556px)"
-        >
+        <DrawerContent w="100%" h="100%">
           <DrawerHeader bg="#e7e7e7">
-            <Box m={{ base: '0 15px 61px', lg: '0 0 61px' }}>
+            <Box w="100%" m="0 0 61px">
               <Flex
-                maxW="1440px"
                 alignItems={{ base: 'flex-end', lg: 'center' }}
                 justifyContent="space-around"
                 flexDirection={{ base: 'column', lg: 'inherit' }}
                 bg="#e7e7e7"
                 minH="64px"
-                m="0 auto"
                 p={{ base: '16px 20px', md: '16px 5px' }}
                 boxShadow="0px 0px 3px 3px rgb(0 0 0 / 10%)"
               >
@@ -95,6 +81,7 @@ const NavModal = ({ isOpen, onOpen, onClose }) => {
                       </Flex>
                       <Box
                         display={{ base: 'block', md: 'none' }}
+                        cursor={{ base: 'pointer', md: 'inherit' }}
                         onClick={() => {
                           onClose();
                         }}

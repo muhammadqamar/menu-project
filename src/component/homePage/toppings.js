@@ -24,7 +24,7 @@ const linkbtn = {
     background: 'transparent',
   },
 };
-const Toppings = ({ onOpen }) => {
+const Toppings = ({ onOpen, setisMenuOpen }) => {
   return (
     <Box w="100%" minH="322px" p="30px">
       <Box maxW="1440px" m="0 auto">
@@ -49,6 +49,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >
@@ -57,6 +58,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >
@@ -67,6 +69,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >
@@ -75,6 +78,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >
@@ -85,6 +89,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >
@@ -93,6 +98,7 @@ const Toppings = ({ onOpen }) => {
             <Button
               sx={linkbtn}
               onClick={() => {
+                setisMenuOpen(false);
                 onOpen();
               }}
             >

@@ -1,10 +1,35 @@
+import { React, useState, useEffect } from 'react';
+
 import { Box, Flex, Img, Link } from '@chakra-ui/react';
-import React from 'react';
 import MainbarMenu from '../assets/images/logo.png';
 import MenuIcon from '../assets/images/menu.png';
 import FaceBook from '../assets/images/facebook.png';
 import Instagram from '../assets/images/instagram.png';
-const Becomevip = ({ onOpen }) => {
+const Becomevip = ({ onOpen, setisMenuOpen }) => {
+  const [navBecome, setnavBecome] = useState(false);
+
+  const ScrollDown = () => {
+    if (window.scrollY >= 710) {
+      setnavBecome(true);
+    } else {
+      setnavBecome(false);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', ScrollDown);
+    }
+  }, []);
+
+  const becomesection = {
+    w: '100%',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    zIndex: '1',
+  };
+  const becomesection1 = { maxW: '1440px' };
   const bannerChildStyle = {
     w: '100%',
     display: 'flex',
@@ -18,7 +43,7 @@ const Becomevip = ({ onOpen }) => {
   return (
     <Box m={{ base: '0 15px 61px', lg: '0 0 61px' }}>
       <Flex
-        maxW="1440px"
+        sx={navBecome ? becomesection : becomesection1}
         alignItems={{ base: 'flex-end', lg: 'center' }}
         justifyContent="space-around"
         flexDirection={{ base: 'column', lg: 'inherit' }}
@@ -68,7 +93,9 @@ const Becomevip = ({ onOpen }) => {
               </Flex>
               <Box
                 display={{ base: 'block', md: 'none' }}
+                cursor={{ base: 'pointer', md: 'inherit' }}
                 onClick={() => {
+                  setisMenuOpen(true);
                   onOpen();
                 }}
               >

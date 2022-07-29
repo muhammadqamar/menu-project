@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Box, Flex, useDisclosure, Img } from '@chakra-ui/react';
 import Becomevip from './becomevip';
 import Toppings from './toppings';
@@ -17,6 +17,7 @@ import NavModal from './modals/navModal';
 
 function Index() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isMenuOpen, setisMenuOpen] = useState(false);
   var settings = {
     dots: false,
     infinite: true,
@@ -55,18 +56,17 @@ function Index() {
           backgroundImage="linear-gradient(180deg, rgba(0, 0, 0, 0.8) 9.89%, rgba(0, 0, 0, 0.8) 100%)"
         ></Flex>
       </Box>
-      <Becomevip onOpen={onOpen} />
+      <Becomevip onOpen={onOpen} setisMenuOpen={setisMenuOpen} />
 
       <Menus />
 
-      <Toppings onOpen={onOpen} />
+      <Toppings onOpen={onOpen} setisMenuOpen={setisMenuOpen} />
       <Options />
-
-      {/* Topping Model Section */}
-      <ToppingModel isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
-
-      {/* Navmodal*/}
-      <NavModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      {isMenuOpen === false ? (
+        <ToppingModel isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      ) : (
+        <NavModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      )}
     </>
   );
 }
